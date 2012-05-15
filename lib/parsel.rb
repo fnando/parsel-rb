@@ -23,10 +23,10 @@ module Parsel
   end
 
   def self.encode(data)
-    Base64.encode64(data).chomp
+    Base64.encode64(data).gsub(/\n/, "")
   end
 
   def self.decode(data)
-    Base64.decode64(data).chomp
+    Base64.decode64(data)
   end
 end
