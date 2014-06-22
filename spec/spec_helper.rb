@@ -1,6 +1,3 @@
-require "bundler"
-Bundler.setup(:default, :development)
-Bundler.require
-
-require "parsel"
+require 'bundler/setup'
+require 'parsel'
 
