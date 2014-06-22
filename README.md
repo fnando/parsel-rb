@@ -13,11 +13,27 @@ Check it out the Node.js counter-part: <http://github.com/fnando/parsel-js>.
 
 ## Usage
 
-    require "parsel"
+```ruby
+require 'parsel'
 
-    secret_key = "mysupersecretkeythatnobodyknowsabout"
-    encrypted = Parsel.encrypt(secret_key, "hello from ruby!")
-    decrypted = Parsel.decrypt(secret_key, encrypted)
+secret_key = 'mysupersecretkeythatnobodyknowsabout'
+encrypted = Parsel.encrypt(secret_key, 'hello from ruby!')
+decrypted = Parsel.decrypt(secret_key, encrypted)
+```
+
+You can also use Marshal for encrypting/decrypting objects. Notice that this isn't supported by Node.js.
+
+```ruby
+require 'parsel'
+
+data = {user_id: 1234}
+
+secret_key = 'mysupersecretkeythatnobodyknowsabout'
+encrypted = Parsel::Marshal.encrypt(secret_key, data)
+
+decrypted = Parsel::Marshal.decrypt(secret_key, encrypted)
+#=> {user_id: 1234}
+```
 
 ## Maintainer
 

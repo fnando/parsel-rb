@@ -1,5 +1,6 @@
 require 'openssl'
 require 'base64'
+require 'parsel/marshal'
 require 'parsel/version'
 
 module Parsel
