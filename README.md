@@ -35,6 +35,20 @@ decrypted = Parsel::Marshal.decrypt(secret_key, encrypted)
 #=> {user_id: 1234}
 ```
 
+Alternatively you can use `JSON` as your serializer.
+
+```ruby
+require 'parsel'
+
+data = {user_id: 1234}
+
+secret_key = 'mysupersecretkeythatnobodyknowsabout'
+encrypted = Parsel::JSON.encrypt(secret_key, data)
+
+decrypted = Parsel::JSON.decrypt(secret_key, encrypted)
+#=> {"user_id" => 1234}
+```
+
 ## Maintainer
 
 - Nando Vieira (<http://nandovieira.com.br>)
