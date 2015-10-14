@@ -51,6 +51,8 @@ decrypted = Parsel::JSON.decrypt(secret_key, encrypted)
 
 ### Custom Cipher IV
 
+![Make sure you use a 16-chars long if you're going to exchange data with parsel-js.](http://messages.hellobits.com/warning.svg?message=Make%20sure%20you%20use%20a%2016-chars%20long%20if%20you're%20going%20to%20exchange%20data%20with%20parsel-js.)
+
 By default, this library uses a built-in IV. You may want to change that.
 
 You can globally change the IV like the following:
@@ -65,6 +67,8 @@ You can also pass the IV to encrypt/decrypt methods.
 Parsel.encrypt(secret_key, iv, data)
 Parsel.decrypt(secret_key, iv, data)
 ```
+
+**NOTE:** If you're going to use <http://github.com/fnando/parsel-js> to exchange data, you have to use a 16-chars long IV. Node.js will fail with different lengths.
 
 ## Maintainer
 
