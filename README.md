@@ -49,6 +49,23 @@ decrypted = Parsel::JSON.decrypt(secret_key, encrypted)
 #=> {"user_id" => 1234}
 ```
 
+### Custom Cipher IV
+
+By default, this library uses a built-in IV. You may want to change that.
+
+You can globally change the IV like the following:
+
+```ruby
+Parsel.default_iv = SecureRandom.hex(100)
+```
+
+You can also pass the IV to encrypt/decrypt methods.
+
+```ruby
+Parsel.encrypt(secret_key, iv, data)
+Parsel.decrypt(secret_key, iv, data)
+```
+
 ## Maintainer
 
 - Nando Vieira (<http://nandovieira.com.br>)

@@ -1,11 +1,13 @@
 module Parsel
   module JSON
-    def self.encrypt(key, data)
-      Parsel.encrypt(key, ::JSON.dump(data))
+    def self.encrypt(*args)
+      key, iv, data = Parsel.expand_args(args)
+      Parsel.encrypt(key, iv, ::JSON.dump(data))
     end
 
-    def self.decrypt(key, data)
-      ::JSON.load Parsel.decrypt(key, data)
+    def self.decrypt(*args)
+      key, iv, data = Parsel.expand_args(args)
+      ::JSON.load Parsel.decrypt(key, iv, data)
     rescue Exception
       false
     end
