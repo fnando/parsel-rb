@@ -1,5 +1,10 @@
 # parsel
 
+[![Code Climate](https://codeclimate.com/github/fnando/parsel-rb.png)](https://codeclimate.com/github/fnando/parsel-rb)
+[![Build Status](https://travis-ci.org/fnando/parsel-rb.svg)](https://travis-ci.org/fnando/parsel-rb)
+[![Gem](https://img.shields.io/gem/v/parsel.svg)](https://rubygems.org/gems/parsel)
+[![Gem](https://img.shields.io/gem/dt/parsel.svg)](https://rubygems.org/gems/parsel)
+
 Encrypt and decrypt data with a given key.
 
 This library was created to allow an easy data
@@ -14,21 +19,21 @@ Check it out the Node.js counter-part: <http://github.com/fnando/parsel-js>.
 ## Usage
 
 ```ruby
-require 'parsel'
+require "parsel"
 
-secret_key = 'mysupersecretkeythatnobodyknowsabout'
-encrypted = Parsel.encrypt(secret_key, 'hello from ruby!')
+secret_key = "mysupersecretkeythatnobodyknowsabout"
+encrypted = Parsel.encrypt(secret_key, "hello from ruby!")
 decrypted = Parsel.decrypt(secret_key, encrypted)
 ```
 
 You can also use Marshal for encrypting/decrypting objects. Notice that this isn't supported by Node.js.
 
 ```ruby
-require 'parsel'
+require "parsel"
 
 data = {user_id: 1234}
 
-secret_key = 'mysupersecretkeythatnobodyknowsabout'
+secret_key = "mysupersecretkeythatnobodyknowsabout"
 encrypted = Parsel::Marshal.encrypt(secret_key, data)
 
 decrypted = Parsel::Marshal.decrypt(secret_key, encrypted)
@@ -38,11 +43,11 @@ decrypted = Parsel::Marshal.decrypt(secret_key, encrypted)
 Alternatively you can use `JSON` as your serializer.
 
 ```ruby
-require 'parsel'
+require "parsel"
 
 data = {user_id: 1234}
 
-secret_key = 'mysupersecretkeythatnobodyknowsabout'
+secret_key = "mysupersecretkeythatnobodyknowsabout"
 encrypted = Parsel::JSON.encrypt(secret_key, data)
 
 decrypted = Parsel::JSON.decrypt(secret_key, encrypted)
