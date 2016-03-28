@@ -1,13 +1,13 @@
-require 'openssl'
-require 'base64'
-require 'json'
-require 'parsel/marshal'
-require 'parsel/json'
-require 'parsel/version'
+require "openssl"
+require "base64"
+require "json"
+require "parsel/marshal"
+require "parsel/json"
+require "parsel/version"
 
 module Parsel
-  DEFAULT_IV = 'f89209ffcdd1a225'.freeze
-  CIPHER = 'AES-256-CBC'.freeze
+  DEFAULT_IV = "f89209ffcdd1a225".freeze
+  CIPHER = "AES-256-CBC".freeze
 
   def self.default_iv=(iv)
     @default_iv = iv
@@ -50,7 +50,7 @@ module Parsel
   end
 
   def self.encode(data)
-    Base64.encode64(data).gsub(/\n/, '')
+    Base64.encode64(data).gsub(/\n/, "")
   end
 
   def self.decode(data)
