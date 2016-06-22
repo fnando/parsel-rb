@@ -45,7 +45,7 @@ module Parsel
   def self.cipher(mode, key, iv, data)
     cipher = OpenSSL::Cipher.new(CIPHER).public_send(mode)
     cipher.key = Digest::SHA256.digest(key)
-    cipher.iv = iv
+    cipher.iv = iv[0...cipher.iv_len]
     cipher.update(data) + cipher.final
   end
 
