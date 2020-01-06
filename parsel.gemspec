@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.homepage    = "http://rubygems.org/gems/parsel"
   s.summary     = "Encrypt and decrypt data with a given key."
   s.description = s.summary
+  s.post_install_message = "`parsel` is no longer supported. Use at your own risk."
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
@@ -17,4 +18,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "rake"
   s.add_development_dependency "minitest-utils"
+  s.add_development_dependency "pry-meta"
 end
